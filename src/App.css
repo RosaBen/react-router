@@ -3,9 +3,17 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color: green;
 }
 
-.logo {
+nav {
+  display: flex;
+  gap: 20px;
+  font-size: 40px;
+  justify-content: center;
+}
+
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -39,4 +47,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
