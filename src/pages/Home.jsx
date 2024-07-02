@@ -1,9 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useRouteLoaderData } from "react-router-dom";
 
 
 export default function Home() {
   
-  const weather = useLoaderData();
+  const weather = useRouteLoaderData("app");
 
   return (
     <>
