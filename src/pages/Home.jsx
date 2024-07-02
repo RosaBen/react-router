@@ -1,23 +1,15 @@
-import { useState, useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
 
-
-const getWeatherOfTheDay = () => {
-  return "sunny";
-};
 
 export default function Home() {
   
-  const [weather, setWeather] = useState();
+  const weather = useLoaderData();
 
-  useEffect(()=>{
-    const weatherOfTheDay = getWeatherOfTheDay();
-    setWeather(weatherOfTheDay);
-  }, [])
   return (
     <>
     <h1>Weather of the day</h1>
 
-    {weather!=null && <p>today&apos;s weather is {weather}</p>}
+    <p>today&apos;s weather is {weather}</p>
     
 
     </>
