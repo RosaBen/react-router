@@ -14,17 +14,30 @@ import Article from "./pages/Article";
 // const getWeatherOfTheDay = () => {
 //   return "sunny";
 // };
+
+const getSomeData = (id) => {
+  const allData = {
+    1: {
+      title: "Lorem Ipsum",
+      content: "Lorem ipsum dolor sit amet",
+    },
+    2: {
+      title: "Schnapsum",
+      content: "Lorem Elsass ipsum Salut bisamme",
+    },
+    3: {
+      title: "Cupcake Ipsum",
+      content: "Tiramisu pastry wafer brownie soufflé",
+    },
+  };
+
+  return allData[id];
+};
 // router creation
 
 const router = createBrowserRouter([
   {
     element: <App />,
-    loader: () => {
-      const weather = "sunny";
-
-      return weather;
-    },
-    id: "app",
     children: [
       {
         path: "/",
@@ -37,6 +50,9 @@ const router = createBrowserRouter([
       {
         path: "/articles/:id",
         element: <Article />,
+        loader: ({params}) => {
+          return getSomeData(params.id);
+        }
       },
     ],
   },
